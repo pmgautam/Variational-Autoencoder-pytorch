@@ -75,8 +75,8 @@ class Trainer:
                 n = min(data.size(0), 8)
                 comparison = torch.cat([data[:n],
                                         indices.view(-1, 3, 32, 32)[:n]])
-                self.summary_writer.add_image(
-                    'testing_set/image', comparison, cur_epoch)
+                # self.summary_writer.add_image(
+                #     'testing_set/image', comparison, cur_epoch)
 
         test_loss /= len(self.test_loader.dataset)
         print('====> Test set loss: {:.4f}'.format(test_loss))
@@ -99,8 +99,8 @@ class Trainer:
                 n = min(data.size(0), 8)
                 comparison = torch.cat([data[:n],
                                         indices.view(-1, 3, 32, 32)[:n]])
-                self.summary_writer.add_image(
-                    'training_set/image', comparison, i)
+                # self.summary_writer.add_image(
+                #     'training_set/image', comparison, i)
 
         test_loss /= len(self.test_loader.dataset)
         print('====> Test on training set loss: {:.4f}'.format(test_loss))
